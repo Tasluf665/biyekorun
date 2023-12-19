@@ -33,6 +33,7 @@ const styles = ScaledSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
+    marginTop: 10,
   },
   marriageImgContianer: {
     width: "75%",
