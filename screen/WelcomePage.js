@@ -48,8 +48,8 @@ const styles = ScaledSheet.create({
   },
   text: {
     textAlign: "center",
-    marginHorizontal: "5%",
-    marginTop: "10%",
+    marginHorizontal: "4.5%",
+    marginTop: "15%",
     color: Colors.Gray,
   },
 });

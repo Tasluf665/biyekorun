@@ -1,41 +1,38 @@
 import React from "react";
-import { TouchableOpacity, Text } from "react-native";
-import { ScaledSheet } from "react-native-size-matters";
-import { LinearTextGradient } from "react-native-text-gradient";
+import { TouchableOpacity, View } from "react-native";
+import { ScaledSheet, scale } from "react-native-size-matters";
+import SvgComponent from "./SvgComponent";
+import { LinearGradient } from "expo-linear-gradient";
 
 import Colors from "../constant/Colors";
 
 const GradientTextButton = ({ onPress, title }) => {
   return (
     <TouchableOpacity
-      activeOpacity={0.8}
+      activeOpacity={0.7}
       onPress={onPress}
       style={styles.contianer}
     >
-      <LinearTextGradient
-        style={{ fontWeight: "bold", fontSize: 72 }}
-        locations={[0, 1]}
-        colors={["red", "blue"]}
-        start={{ x: 0, y: 0 }}
-        end={{ x: 1, y: 0 }}
-      >
-        <Text style={styles.buttonText}>{title}</Text>
-      </LinearTextGradient>
+      <View style={styles.button}>
+        <SvgComponent width={scale(125)} />
+      </View>
     </TouchableOpacity>
   );
 };
 
 const styles = ScaledSheet.create({
+  contianer: {},
   button: {
+    paddingHorizontal: "82@s",
+    paddingVertical: "16@vs",
+    marginTop: "20@vs",
+    backgroundColor: Colors.LightGray,
     borderRadius: 50,
-    paddingHorizontal: "120@s",
-    paddingVertical: "13@vs",
-    marginTop: "25@vs",
   },
   buttonText: {
     color: "white",
     textAlign: "center",
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: "bold",
   },
 });
