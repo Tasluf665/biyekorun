@@ -2,21 +2,22 @@ import { Text, View, Image } from "react-native";
 import React from "react";
 import { ScaledSheet } from "react-native-size-matters";
 
-import GradientButton from "../components/GradientButton";
 import Colors from "../constant/Colors";
-import GradientTextButton from "../components/GradientTextButton";
+import LogoContainer from "../components/AuthScreens/LogoContainer";
+import GradientButton from "../components/AuthScreens/GradientButton";
+import GradientTextButton from "../components/AuthScreens/GradientTextButton";
 
 export default function WelcomePage() {
   return (
     <View style={styles.container}>
-      <Image
-        source={require("../assets/AppImage/logo2.png")}
-        style={styles.logo}
-      />
-      <Image
-        source={require("../assets/AppImage/marriage2.png")}
-        style={styles.marriageImg}
-      />
+      <LogoContainer />
+      <View style={styles.marriageImgContianer}>
+        <Image
+          source={require("../assets/AppImage/marriage2.png")}
+          style={styles.marriageImg}
+        />
+      </View>
+
       <Text style={styles.text}>
         By tapping “Login” or “Sing in”, you agree to our Terms. Learn how we
         process your data in our Privacy Policy and Cookies Policy
@@ -33,23 +34,22 @@ const styles = ScaledSheet.create({
     flex: 1,
     alignItems: "center",
   },
-  logo: {
-    width: "100@s",
-    height: "100@vs",
-    resizeMode: "contain",
+  marriageImgContianer: {
+    width: "75%",
+    height: "42%",
+    marginTop: "4%",
   },
   marriageImg: {
-    width: "270@s",
-    height: "290@vs",
+    width: "100%",
+    height: "100%",
     resizeMode: "contain",
-    borderTopLeftRadius: 160,
-    borderTopRightRadius: 160,
-    marginTop: "15@vs",
+    borderTopLeftRadius: 500,
+    borderTopRightRadius: 500,
   },
   text: {
     textAlign: "center",
     marginHorizontal: "4.5%",
-    marginTop: "15%",
+    marginTop: "10%",
     color: Colors.Gray,
   },
 });

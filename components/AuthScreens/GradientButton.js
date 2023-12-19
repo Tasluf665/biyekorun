@@ -3,14 +3,14 @@ import { TouchableOpacity, Text } from "react-native";
 import { ScaledSheet } from "react-native-size-matters";
 import { LinearGradient } from "expo-linear-gradient";
 
-import Colors from "../constant/Colors";
+import Colors from "../../constant/Colors";
 
-const GradientButton = ({ onPress, title }) => {
+const GradientButton = ({ onPress, title, style }) => {
   return (
     <TouchableOpacity
       activeOpacity={0.8}
       onPress={onPress}
-      style={styles.contianer}
+      style={{ ...styles.contianer, ...style }}
     >
       <LinearGradient
         colors={[Colors.GradientColor1, Colors.GradientColor2]}
@@ -25,11 +25,18 @@ const GradientButton = ({ onPress, title }) => {
 };
 
 const styles = ScaledSheet.create({
+  contianer: {
+    width: "100%",
+    height: "6%",
+    marginTop: "25@vs",
+    alignItems: "center",
+    minHeight: 45,
+  },
   button: {
     borderRadius: 50,
-    paddingHorizontal: "120@s",
-    paddingVertical: "13@vs",
-    marginTop: "25@vs",
+    width: "90%",
+    height: "100%",
+    justifyContent: "center",
   },
   buttonText: {
     color: "white",
