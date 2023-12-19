@@ -10,11 +10,11 @@ export default function WelcomePage() {
   return (
     <View style={styles.container}>
       <Image
-        source={require("../assets/AppImage/logo.png")}
+        source={require("../assets/AppImage/logo2.png")}
         style={styles.logo}
       />
       <Image
-        source={require("../assets/AppImage/marriage.png")}
+        source={require("../assets/AppImage/marriage2.png")}
         style={styles.marriageImg}
       />
       <Text style={styles.text}>
